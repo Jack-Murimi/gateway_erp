@@ -9,6 +9,15 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Gateway Gas'),
       ),
+      body: Column(
+        children: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/customer');
+              },
+              icon: const Icon(Icons.person))
+        ],
+      ),
     );
   }
 }

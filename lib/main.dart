@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gateway_erp/pages/customerpage.dart';
 import 'package:gateway_erp/pages/homepage.dart';
 import 'package:gateway_erp/theme/theme.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -22,7 +23,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: const HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(),
+        '/customer': (context) => const CustomerPage(),
+      },
     );
   }
 }

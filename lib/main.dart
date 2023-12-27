@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gateway_erp/pages/customerdetailspage.dart';
 import 'package:gateway_erp/pages/customerpage.dart';
 import 'package:gateway_erp/pages/homepage.dart';
 import 'package:gateway_erp/theme/theme.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const HomePage(),
         '/customer': (context) => const CustomerPage(),
+        '/customerdetails': (context) => const CustomerDetailsPage(),
       },
     );
   }

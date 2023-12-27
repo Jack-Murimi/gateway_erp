@@ -39,9 +39,37 @@ class CustomerPage extends StatelessWidget {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 final location = customers![index]['locations'][0];
-                return ListTile(
-                  title: Text(customers[index]['primary_name']),
-                  subtitle: Text(location['location_name']),
+                return Container(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.secondaryContainer,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: ListTile(
+                    title: Text(
+                      customers[index]['primary_name'],
+                      style: TextStyle(
+                          color: Theme.of(context)
+                              .colorScheme
+                              .onSecondaryContainer),
+                    ),
+                    subtitle: Text(
+                      location['location_name'],
+                      style: TextStyle(
+                          color: Theme.of(context)
+                              .colorScheme
+                              .onSecondaryContainer),
+                    ),
+                    trailing: const Text(
+                      '50,000',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/customerdetails',
+                          arguments: customers[index]['id']);
+                    },
+                  ),
                 );
               },
             );
